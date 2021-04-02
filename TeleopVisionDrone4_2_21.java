@@ -436,7 +436,7 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
         conveyorMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         launcherMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         wobbleGoalMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        wobbleGoalClampServo.setPosition(0);
+        wobbleGoalClampServo.setPosition(0.4);
         inclineMotor.setPosition(0.0);
         conveyorBeltMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
