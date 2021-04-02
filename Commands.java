@@ -439,6 +439,10 @@ public class Commands extends HardwareMapping{
         wobbleGoalClampServo.setPosition(position);
     };
 
+    public void wobbleGoalClawTime(){
+
+    }
+
     public void woableGoalElevator(){
 
         int timeout = 1;
