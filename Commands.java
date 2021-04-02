@@ -435,6 +435,7 @@ public class Commands extends HardwareMapping{
      * @param position 0-closed, 0.5-open
      */
     public void wobbleGoalClaw(double position){
+
         wobbleGoalClampServo.setPosition(position);
     };
 
