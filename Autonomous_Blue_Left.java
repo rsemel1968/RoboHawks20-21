@@ -82,7 +82,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
         sleep(200);
 
         //grab the wooble
-        commands.wobbleGoalClaw(-0.5,3);
+        commands.wobbleGoalClaw(0);
         sleep(200);
         //lift the wooble
         commands.woableGoalElevator();
@@ -110,7 +110,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(0.5,1);
+                commands.wobbleGoalClaw(1);
                 sleep(200);
 
 //                commands.slideRight(24,0.5,5);
@@ -138,7 +138,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop off wobble
-                commands.wobbleGoalClaw(0.5,1);
+                commands.wobbleGoalClaw(1);
                 sleep(200);
 
                 commands.slideRight(6,0.5,5);
@@ -166,7 +166,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(0.5,1);
+                commands.wobbleGoalClaw(1);
                 sleep(200);
 
                 commands.slideRight(6,0.5,2);

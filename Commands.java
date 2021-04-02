@@ -432,31 +432,31 @@ public class Commands extends HardwareMapping{
 
     /**
      * Servo command
-     * @param position 0-closed, 0.5-open
+     * @param position 0-closed, 0.4-open
      */
-//    public void wobbleGoalClaw(double position){
-//
-//        wobbleGoalClampServo.setPosition(position);
-//    };
+    public void wobbleGoalClaw(double position){
+
+        wobbleGoalClampServo.setPosition(position);
+    };
 
     /**
      * CRServo command (continous servo)
      * @param power POSITIVE - open, NEGATIVE - close
      * @param timeout
      */
-    public void wobbleGoalClaw(double power, int timeout){
-
-        //reset the current time
-        runtime.reset();
-
-        wobbleGoalClampServo.setPower(power);
-
-        while ( runtime.seconds() < timeout ){
-        }
-
-        wobbleGoalClampServo.setPower(0);
-
-    }
+//    public void wobbleGoalClaw(double power, int timeout){
+//
+//        //reset the current time
+//        runtime.reset();
+//
+//        wobbleGoalClampServo.setPower(power);
+//
+//        while ( runtime.seconds() < timeout ){
+//        }
+//
+//        wobbleGoalClampServo.setPower(0);
+//
+//    }
 
     public void woableGoalElevator(){
 
