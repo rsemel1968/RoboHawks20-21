@@ -684,9 +684,11 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
                 /* gamepad command to run the Wobble Goal motor for raising/lowering Wobble goal
                  */
                 // Gamepad 2: Left Joystick: Wobble goal motor up/down
-                wobble_power = 0.75 * gamepad2.left_stick_y;
-                while(wobbleGoalMotor.getCurrentPosition() < 10000) {
-                    wobbleGoalMotor.setPower(wobble_power);
+                if (gamepad2.left_stick_y > 0.1 || gamepad2.left_stick_y < -0.1 ) {
+                    wobble_power = 0.75 * gamepad2.left_stick_y;
+                    while (wobbleGoalMotor.getCurrentPosition() < 10000) {
+                        wobbleGoalMotor.setPower(wobble_power);
+                    }
                 }
                 Wobble = gamepad2.left_stick_y;
                 telemetry.addData("Wobble Lift", Wobble);
