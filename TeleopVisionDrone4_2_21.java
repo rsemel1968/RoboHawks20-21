@@ -131,7 +131,7 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
     private DcMotor launcherMotor;
     private DcMotor wobbleGoalMotor;
     private CRServo intakeServo;
-    private Servo wobbleGoalClampServo;
+    private CRServo wobbleGoalClampServo;
     private Servo inclineMotor;
     private DcMotor conveyorBeltMotor;
 
@@ -265,7 +265,7 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
         launcherMotor = hardwareMap.get(DcMotor.class, "launcherMotor");
         wobbleGoalMotor = hardwareMap.get(DcMotor.class, "wobbleGoalMotor");
         intakeServo = hardwareMap.get(CRServo.class, "intakeServo");
-        wobbleGoalClampServo = hardwareMap.get(Servo.class, "wobbleGoalClampServo");
+        wobbleGoalClampServo = hardwareMap.get(CRServo.class, "wobbleGoalClampServo");
         inclineMotor = hardwareMap.get(Servo.class, "inclineMotor");
         conveyorBeltMotor = hardwareMap.get(DcMotor.class, "conveyorBeltMotor");
 
@@ -436,7 +436,6 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
         conveyorMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         launcherMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         wobbleGoalMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        wobbleGoalClampServo.setPosition(0.0);
         inclineMotor.setPosition(0.0);
         conveyorBeltMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
@@ -697,10 +696,10 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
 
 
                 if (gamepad2.right_bumper) {
-                    wobbleGoalClampServo.setPosition(0.0);
+                    wobbleGoalClampServo.setPower(1);
                 }
                 if (gamepad2.left_bumper) {
-                    wobbleGoalClampServo.setPosition(0.4);
+                    wobbleGoalClampServo.setPower(-1);
                 }
                 Clamp = gamepad2.left_bumper;
                 telemetry.addData("Clamp", Clamp);
