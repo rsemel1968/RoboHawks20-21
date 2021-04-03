@@ -438,6 +438,7 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
         wobbleGoalMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         inclineMotor.setPosition(0.0);
         conveyorBeltMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        wobbleGoalMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         /* VVVVVVVVVVVVVVVVVVVVVVVV   Vision IMU start for heading info  VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
         // Start the logging of measured acceleration
@@ -684,8 +685,9 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
                  */
                 // Gamepad 2: Left Joystick: Wobble goal motor up/down
                 wobble_power = 0.75 * gamepad2.left_stick_y;
-                wobbleGoalMotor.setPower(wobble_power);
-
+                while(wobbleGoalMotor.getCurrentPosition() < 10000) {
+                    wobbleGoalMotor.setPower(wobble_power);
+                }
                 Wobble = gamepad2.left_stick_y;
                 telemetry.addData("Wobble Lift", Wobble);
 
