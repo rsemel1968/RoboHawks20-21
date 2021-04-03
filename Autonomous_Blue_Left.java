@@ -102,7 +102,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
             //move to A B or C - 0 1 4
             if (rings == 0){
                 //move forward shoot turn CW move back, drop wobble slide right forward slide felt park
-                commands.moveForward(72,0.6,5);
+                commands.moveForward(76,0.6,5);
                 sleep(200);
 //                commands.rotateClockwise(9,0.5,3);
 //                sleep(200);
