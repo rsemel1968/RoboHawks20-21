@@ -698,7 +698,7 @@ public class TeleopVisionDrone4_2_21 extends LinearOpMode {
 
 
                 if (gamepad2.right_bumper) {
-                    wobbleGoalClampServo.setPower(1);
+                    wobbleGoalClampServo.setPower(.75);
                 }
                 if (gamepad2.left_bumper) {
                     wobbleGoalClampServo.setPower(-1);
