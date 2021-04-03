@@ -79,13 +79,6 @@ public class Autonomous_Red_Left extends LinearOpMode {
 
         //detect the rings
         rings = ringDetector.ringDectorLoop();
-        sleep(200);
-
-        //grab the wooble
-        commands.wobbleGoalClaw(0);
-        sleep(200);
-        //lift the wooble
-        commands.woableGoalElevator();
 
         telemetry.addData("rings : ", rings);
         telemetry.update();
@@ -95,6 +88,13 @@ public class Autonomous_Red_Left extends LinearOpMode {
 
         while(opModeIsActive()) {
 
+            //grab the wooble
+            commands.wobbleGoalClaw(-0.5,3);
+            sleep(500);
+            //lift the wooble
+            commands.woableGoalElevator();
+
+
             //face forward
             commands.rightRearPivot(-10, 0.5, 3);
             sleep(200);
@@ -102,7 +102,7 @@ public class Autonomous_Red_Left extends LinearOpMode {
             //move to A B or C - 0 1 4
             if (rings == 0){
                 //move forward then slide to drop off the wabble
-                commands.moveForward(72,0.5,5);
+                commands.moveForward(72,0.6,5);
                 sleep(200);
                 commands.rotateClockwise(22,0.5,3);
                 sleep(200);
@@ -110,20 +110,20 @@ public class Autonomous_Red_Left extends LinearOpMode {
                 sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(1);
+                commands.wobbleGoalClaw(0.5,2);
 
                 sleep(30000);
             }
             else if (rings == 1){
                 //move forward rotate 180 slide to the left drop off wobble
                 //slide to the right, move forward and park
-                commands.moveForward(100,0.5,10);
+                commands.moveForward(100,0.6,10);
                 sleep(200);
                 commands.slideRight(36,0.5,5);
                 sleep(200);
 
                 //drop off wobble
-                commands.wobbleGoalClaw(1);
+                commands.wobbleGoalClaw(0.5,2);
                 sleep(200);
                 commands.slideRight(6,0.5,5);
                 sleep(200);
@@ -134,7 +134,7 @@ public class Autonomous_Red_Left extends LinearOpMode {
             }
             else {
                 //move forward turn CW move forward drop off wobble move back slide right and park
-                commands.moveForward(125,0.5,10);
+                commands.moveForward(125,0.6,10);
                 sleep(200);
 
                 commands.rotateClockwise(22,0.5,3);
@@ -143,7 +143,7 @@ public class Autonomous_Red_Left extends LinearOpMode {
                 sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(1);
+                commands.wobbleGoalClaw(0.5,2);
                 sleep(200);
 
                 commands.slideRight(48
