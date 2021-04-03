@@ -32,7 +32,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
@@ -62,7 +61,7 @@ public class HardwareMapping
     public DcMotor launcherMotor = null;
     public DcMotor wobbleGoalMotor = null;
     public CRServo intakeServo = null;
-    public Servo wobbleGoalClampServo = null;
+    public CRServo wobbleGoalClampServo = null;
     public DcMotor inclineMotor = null;
     private DcMotor conveyorBeltMotor = null;
 
@@ -99,7 +98,7 @@ public class HardwareMapping
         launcherMotor = hwMap.get(DcMotor.class, "launcherMotor");
         wobbleGoalMotor = hwMap.get(DcMotor.class, "wobbleGoalMotor");
         intakeServo = hwMap.get(CRServo.class, "intakeServo");
-        wobbleGoalClampServo = hwMap.get(Servo.class, "wobbleGoalClampServo");
+        wobbleGoalClampServo = hwMap.get(CRServo.class, "wobbleGoalClampServo");
  //       inclineMotor = hwMap.get(DcMotor.class, "inclineMotor");
         conveyorBeltMotor = hwMap.get(DcMotor.class, "conveyorBeltMotor");
 
@@ -117,7 +116,7 @@ public class HardwareMapping
         leftRear.setPower(0);
         rightRear.setPower(0);
         wobbleGoalMotor.setPower(0);
-        wobbleGoalClampServo.setPosition(0.4);
+       // wobbleGoalClampServo.setPosition(0.4);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.

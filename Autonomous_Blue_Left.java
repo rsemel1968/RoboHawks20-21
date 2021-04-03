@@ -79,13 +79,6 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 
         //detect the rings
         rings = ringDetector.ringDectorLoop();
-        sleep(200);
-
-        //grab the wooble
-        commands.wobbleGoalClaw(0);
-        sleep(200);
-        //lift the wooble
-        commands.woableGoalElevator();
 
         telemetry.addData("rings : ", rings);
         telemetry.update();
@@ -95,6 +88,13 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 
         while(opModeIsActive()) {
 
+            //grab the wooble
+           // commands.wobbleGoalClaw(0);
+            commands.wobbleGoalClaw(-0.5,3);
+            sleep(500);
+            //lift the wooble
+            commands.woableGoalElevator();
+
             //face forward
             commands.rightRearPivot(-10, 0.5, 3);
             sleep(200);
@@ -102,7 +102,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
             //move to A B or C - 0 1 4
             if (rings == 0){
                 //move forward shoot turn CW move back, drop wobble slide right forward slide felt park
-                commands.moveForward(72,0.5,5);
+                commands.moveForward(72,0.6,5);
                 sleep(200);
 //                commands.rotateClockwise(9,0.5,3);
 //                sleep(200);
@@ -110,8 +110,8 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(1);
-                sleep(200);
+                commands.wobbleGoalClaw(0.5,2);
+                sleep(500);
 
 //                commands.slideRight(24,0.5,5);
 //                sleep(200);
@@ -126,10 +126,10 @@ public class Autonomous_Blue_Left extends LinearOpMode {
             }
             else if (rings == 1){
                 //move forward, shoot rings, turn clockwise, move back, drop off wobble, slide right, move forward, slide left and park
-                commands.moveForward(96,0.5,10);
+                commands.moveForward(100,0.6,10);
                 //shoot rings
                 sleep(200);
-                commands.slideRight(12,0.5,2);
+                commands.slideRight(24,0.5,2);
                 sleep(200);
 
 //                commands.rotateClockwise(9,0.5,3);
@@ -138,8 +138,8 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop off wobble
-                commands.wobbleGoalClaw(1);
-                sleep(200);
+                commands.wobbleGoalClaw(0.5,2);
+                sleep(500);
 
                 commands.slideRight(6,0.5,5);
                 sleep(200);
@@ -156,7 +156,7 @@ public class Autonomous_Blue_Left extends LinearOpMode {
             }
             else {
                 //move forward shoot forward slide left drop wobble slide right move backward
-                commands.moveForward(130,0.5,10);
+                commands.moveForward(130,0.6,10);
                 sleep(200);
                 //shoot
 
@@ -166,8 +166,8 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop wobble
-                commands.wobbleGoalClaw(1);
-                sleep(200);
+                commands.wobbleGoalClaw(0.5,2);
+                sleep(500);
 
                 commands.slideRight(6,0.5,2);
                 sleep(200);
